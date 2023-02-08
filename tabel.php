@@ -30,7 +30,7 @@ try {
 	$html .= '</table>';
 	echo $html;
 	}
-	
+
 	$html = '<table id="T2">';
 	if ($stmt = $conn->prepare("SELECT `id`, `name`, `like_count` FROM `beers`")) {
 		$stmt->execute();
@@ -72,12 +72,11 @@ try {
 			referrer: 'same-origin',
 			redirect: 'error'
 		});
-		console.log(request);
 		response = await request.json();
 
-
 		if (response.success) {
-			location.reload();
+			// true zorgt ervoor dat er geen cache word geladen
+			location.reload(true);
 		} else {
 			alert(response.error);
 		}
