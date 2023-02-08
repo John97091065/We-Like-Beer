@@ -4,6 +4,7 @@
 // de functies worden aangeroepen met de javascript fetch api
 // houd hier wel rekening met beveiliging javascript is namelijk wel client side
 
+declare(strict_types=1);
 $fn = filter_input(INPUT_GET, 'fn');
 
 try {
