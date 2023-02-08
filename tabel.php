@@ -14,7 +14,7 @@ error_reporting(E_ALL);
 require_once 'conn.php';
 
 try {
-	$html = '<table>';
+	$html = '<table id="T1">';
 	$html .= '<tr><th colspan="3">top 3 beste soorten bier</th></tr>';
 	$html .= '<tr><th>id</th><th>naam</th><th>likes</th></tr>';
 
@@ -24,16 +24,21 @@ try {
 
 		while($stmt->fetch()) {
 			$html .= '<tr><td>' . $id . '</td><td>' . $name . '</td><td>' . $likes . '</td>';
+			
 		}
 		$stmt->close();
+	$html .= '</table>';
+	echo $html;
 	}
 
+	$html = '<table id="T2">';
 	if ($stmt = $conn->prepare("SELECT `id`, `name`, `like_count` FROM `beers`")) {
 		$stmt->execute();
 		$stmt->bind_result($id, $name, $likes);
-
+		
 		// je kan hier classes aan toevoegen eventueel "dylan"
-		$html .= '<tr><th colspan="5">alle soorten bier op een rij</th></tr>';
+		
+		$html .= '<tr><th colspan="5">Alle soorten bier op een rij</th></tr>';
 		$html .= '<tr><th>id</th><th>naam</th><th>+</th><th>-</th><th>likes</th>';
 
 		while($stmt->fetch()) {
