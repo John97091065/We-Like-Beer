@@ -8,9 +8,17 @@
     <title>We Like Bear</title>
 </head>
 <body>
-    <h1>We Like Beer</h1>
     
-    <h2 style="text-decoration: underline;">Bieren</h2>
+    <nav>
+      <h1>We Like Beer</h1>  
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
     <div id="divBeer">
         <?php
         include ("tabel.php");

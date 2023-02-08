@@ -14,22 +14,7 @@ error_reporting(E_ALL);
 require_once 'conn.php';
 
 try {
-	$html = '<table id="T1">';
-	$html .= '<tr><th colspan="3">top 3 beste soorten bier</th></tr>';
-	$html .= '<tr><th>id</th><th>naam</th><th>likes</th></tr>';
-
-	if ($stmt = $conn->prepare("SELECT `id`, `name`, `like_count` FROM `beers` ORDER BY `like_count` DESC LIMIT 3")) {
-		$stmt->execute();
-		$stmt->bind_result($id, $name, $likes);
-
-		while($stmt->fetch()) {
-			$html .= '<tr><td>' . $id . '</td><td>' . $name . '</td><td>' . $likes . '</td>';
-			
-		}
-		$stmt->close();
-	$html .= '</table>';
-	echo $html;
-	}
+	
 
 	$html = '<table id="T2">';
 	if ($stmt = $conn->prepare("SELECT `id`, `name`, `like_count` FROM `beers`")) {
@@ -50,6 +35,28 @@ try {
 		$html .= '</table>';
 		echo $html;
 	}
+
+	$html = '<table id="T1">';
+	$html .= '<tr><th colspan="3">top 3 beste soorten bier</th></tr>';
+	$html .= '<tr><th>id</th><th>naam</th><th>likes</th></tr>';
+
+	if ($stmt = $conn->prepare("SELECT `id`, `name`, `like_count` FROM `beers` ORDER BY `like_count` DESC LIMIT 3")) {
+		$stmt->execute();
+		$stmt->bind_result($id, $name, $likes);
+
+		while($stmt->fetch()) {
+			$html .= '<tr><td>' . $id . '</td><td>' . $name . '</td><td>' . $likes . '</td>';
+			
+		}
+		$stmt->close();
+	$html .= '</table>';
+	echo $html;
+	}
+
+		$html .= '<table id="T#">';
+
+		$html .= '</table>';
+
 
 	// sql statement voor top 3 liked: SELECT `id`, `name`, `like_count` FROM `beers` ORDER BY `like_count` DESC LIMIT 3;
 } catch (Exception $e) {
