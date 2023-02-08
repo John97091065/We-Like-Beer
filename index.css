@@ -1,5 +1,30 @@
 body{
-    margin: 20px;
-    background-color: rgb(233, 255, 252);
+    margin: 40px;
+    background: rgb(255,173,204);
+    background: -moz-linear-gradient(18deg, rgba(255,173,204,1) 0%, rgba(201,245,255,1) 100%);
+    background: -webkit-linear-gradient(18deg, rgba(255,173,204,1) 0%, rgba(201,245,255,1) 100%);
+    background: linear-gradient(18deg, rgba(255,173,204,1) 0%, rgba(201,245,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffadcc",endColorstr="#c9f5ff",GradientType=1);
     font-family: consolas;
 }
+
+table{
+    width: 50%;
+    
+  }
+
+#T1{
+    background-color: aliceblue;
+    border-radius: 10px;
+}  
+
+
+#T2{
+    background-color:
+    rgba(240, 248, 255, 0.479);
+    border-radius: 10px;
+}
+
+  
+
+  
