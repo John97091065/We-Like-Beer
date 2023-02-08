@@ -27,8 +27,8 @@ try {
 			
 		}
 		$stmt->close();
-	$html .= '</table>';
-	echo $html;
+		$html .= '</table>';
+		echo $html;
 	}
 
 	$html = '<table id="T2">';
@@ -60,6 +60,7 @@ try {
 <script>
 	// javascript voor het voting systeem
 	// controle kan op backend gedaan worden met behulp van ip-adress
+	// 
 	async function vote(id, amount) {
 		// ?fn staat voor de functie die geroepen word en &id, &amount zijn parameters van een functie in server.php
 		request = await fetch("server.php?fn=vote&id=" + id + "&amount=" + amount, {
