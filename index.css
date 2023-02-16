@@ -13,25 +13,40 @@ body{
     justify-content: space-evenly;
 }
 
-table{
-    width: 50%;
-    padding: 5px 10px;
-  }
-
-#T1{
-    background-color: rgba(0, 0, 0, 0.233);
-    border-radius: 10px;
-    height: 100%;
-    width: 25%;
-}  
-
-
-#T2{
-    background-color:
-    rgba(240, 248, 255, 0.479);
-    border-radius: 10px;
+body {
+	height: 100vh;
+	overflow: hidden;
 }
 
-  
+svg {
+	cursor: pointer;
+}
 
-  
+.scr table tr td:nth-of-type(odd) svg:hover {
+	fill: green;
+}
+
+.scr table tr td:nth-of-type(even) svg:hover {
+	fill: red;
+}
+
+table {
+    width: 50%;
+    padding: 5px 10px;
+}
+
+table:nth-of-type(odd) {
+	background: red;
+	height: min-content;
+} 
+
+table:nth-of-type(even) {
+	background: pink;
+	height: 60vh;
+}
+
+div.scr {
+	max-height: 60vh;
+	width: min-content;
+	overflow: auto;
+}

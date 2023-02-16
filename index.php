@@ -16,13 +16,24 @@
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#contact">Contact</a></li>
+	<li></li>
   </ul>
 </nav>
 
     <div id="divBeer">
-        <?php
-        include ("tabel.php");
-        ?>
+
     </div>
 </body>
+<script>
+	async function getBeers() {
+		req = await fetch("server.php?fn=getAllBeers", {
+			method: 'GET',
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		});
+		rep = await req.json();
+		console.log(rep);
+	}
+</script>
 </html>

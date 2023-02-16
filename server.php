@@ -1,6 +1,6 @@
 <?php
 
-// server van php, dit word in pricipe gebruikt als een verzameling van functies
+// server van php, dit word in pricipe gebruikt als een api / verzameling van functies
 // de functies worden aangeroepen met de javascript fetch api
 // houd hier wel rekening met beveiliging javascript is namelijk wel client side
 
@@ -8,25 +8,8 @@ declare(strict_types=1);
 $fn = filter_input(INPUT_GET, 'fn');
 
 try {
+
 	if ($fn === 'vote') {
-		$id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
-		$amount = filter_input(INPUT_GET, 'amount', FILTER_VALIDATE_INT);
-
-		$amount = empty($amount)?1:$amount;
-
-		require_once 'conn.php';
-
-		if ($stmt = $conn->prepare("UPDATE `beers` SET `like_count` = `like_count` + ? WHERE `id` = ?")) {
-			$stmt->bind_param('ii', $amount, $id);
-			if ($stmt->execute()) {
-				$return = new stdClass;
-				$return->success = true;
-
-				header('content-type: application/json');
-				print(json_encode($return));
-			}
-		}
-	} elseif ($fn === 'voteV2') {
 		$id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 		$amount = filter_input(INPUT_GET, 'amount', FILTER_VALIDATE_INT);
 		$amount = empty($amount)?1:$amount;
@@ -71,18 +54,27 @@ try {
 				print(json_encode($return));
 			}
 		}
-	} elseif ($fn === 'getVotes') {
-		require_once 'conn.php';
+	} elseif ($fn === "getAllBeers") {
+		require_once "conn.php";
 
-		if ($stmt = $conn->prepare("SELECT INET_NTOA(`ip_adress`) FROM `votes`")) {
+		// alle bieren
+		// left join statement haalt niet alle biertjes op
+		if ($stmt = $conn->prepare("SELECT `id`, `name` FROM `beers`")) {
 			$stmt->execute();
-			$stmt->bind_result($ip);
+			$stmt->bind_result($id, $name);	
+	
+			$html = new stdClass;
+
 			while($stmt->fetch()) {
-				echo $ip . "\n";
+				$html->id[] = $id;
+				$html->name[] = $name;
+				// $html->like_count = $like_count;
 			}
+			header('content-type: application/json');
+			print(json_encode($html));
+			$stmt->close();
 		}
 	}
-
 } catch (Exception $e) {
 	$return = new stdClass;
 	$return->success = false;
