@@ -59,20 +59,24 @@ try {
 
 		// alle bieren
 		// left join statement haalt niet alle biertjes op
-		if ($stmt = $conn->prepare("SELECT `id`, `name` FROM `beers`")) {
+		if ($stmt = $conn->prepare("SELECT beers.id, beers.name, COUNT(votes.beer_id) FROM `beers` LEFT JOIN `votes` ON votes.beer_id = beers.id GROUP BY beers.id")) {
 			$stmt->execute();
-			$stmt->bind_result($id, $name);	
+			$stmt->bind_result($id, $name, $votes);	
 	
-			$html = new stdClass;
+			$html = [];
 
 			while($stmt->fetch()) {
-				$html->id[] = $id;
-				$html->name[] = $name;
-				// $html->like_count = $like_count;
+				$tmp = new stdClass;
+				$tmp->id = $id;
+				$tmp->name = $name;
+				$tmp->votes = $votes;
+
+				$html[] = $tmp;
 			}
+			$stmt->close();
+
 			header('content-type: application/json');
 			print(json_encode($html));
-			$stmt->close();
 		}
 	}
 } catch (Exception $e) {

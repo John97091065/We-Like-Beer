@@ -25,6 +25,7 @@
     </div>
 </body>
 <script>
+	window.onload = getBeers;
 	async function getBeers() {
 		req = await fetch("server.php?fn=getAllBeers", {
 			method: 'GET',
@@ -34,6 +35,19 @@
 		});
 		rep = await req.json();
 		console.log(rep);
+	}
+
+	/**
+	 * @param {int} id - the beer id
+	 * @param {int} amount - 1 or -1 for direction
+	 */
+	async function vote(id, amount) {
+		req = await fetch("server.php?fn=vote&id=" + id + "&amount=" . amount, {
+			method: 'GET',
+			headers: {
+				
+			}
+		})
 	}
 </script>
 </html>
