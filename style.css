@@ -1,0 +1,49 @@
+body {
+  background-color: #fffbdb;
+}
+
+.nav-container {
+  background-color: #da7422;
+}
+
+.navbar-brand {
+  font-family: "Anton", sans-serif;
+  font-size: 1.5em;
+  color: #443627 !important;
+}
+
+.nav-item > a {
+  font-family: "Kanit", sans-serif;
+  color: #443627 !important;
+}
+
+/* Grow Shadow */
+.hvr-grow-shadow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform;
+}
+.hvr-grow-shadow:hover,
+.hvr-grow-shadow:focus,
+.hvr-grow-shadow:active {
+  box-shadow: 0 10px 10px -10px #da7422;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.form-control {
+  border-color: #443627;
+  background-color: #fffbdb;
+}
+
+.form-control:focus {
+  border-color: #443627;
+  background-color: #fffbdb;
+  box-shadow: 0 0 0 0.1rem #443627;
+}
