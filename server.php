@@ -12,8 +12,8 @@ try {
 	if ($fn === 'vote') {
 		$id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 		$amount = filter_input(INPUT_GET, 'amount', FILTER_VALIDATE_INT);
-		$amount = empty($amount)?1:$amount;
-		
+		$amount = empty($amount) ? 1 : $amount;
+
 		require_once 'conn.php';
 
 		if ($stmt = $conn->prepare("SELECT `id` FROM `votes` WHERE `ip_adress` = INET_ATON(?)")) {
@@ -37,7 +37,6 @@ try {
 
 				header('content-type: application/json');
 				print(json_encode($return));
-				
 			} else {
 				$stmt->close();
 			}
@@ -59,24 +58,47 @@ try {
 
 		// alle bieren
 		// left join statement haalt niet alle biertjes op
-		if ($stmt = $conn->prepare("SELECT beers.id, beers.name, COUNT(votes.beer_id) FROM `beers` LEFT JOIN `votes` ON votes.beer_id = beers.id GROUP BY beers.id")) {
+		if ($stmt = $conn->prepare("SELECT `id`, `name` FROM `beers`")) {
 			$stmt->execute();
-			$stmt->bind_result($id, $name, $votes);	
-	
-			$html = [];
+			$stmt->bind_result($id, $name);
 
-			while($stmt->fetch()) {
-				$tmp = new stdClass;
-				$tmp->id = $id;
-				$tmp->name = $name;
-				$tmp->votes = $votes;
+			$html = new stdClass;
 
-				$html[] = $tmp;
+			while ($stmt->fetch()) {
+				$html->id[] = $id;
+				$html->name[] = $name;
+				// $html->like_count = $like_count;
 			}
-			$stmt->close();
-
 			header('content-type: application/json');
 			print(json_encode($html));
+			$stmt->close();
+		}
+	} elseif ($fn === 'getBeer') {
+		$beer_id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+
+		require_once 'conn.php';
+
+		if ($stmt = $conn->prepare("SELECT beers.name, beers.brewer, beers.type, beers.yeast, beers.perc, beers.purchase_price, rating.comment, rating.amount FROM `beers` LEFT JOIN `rating` ON   rating.beer_id = beers.id where beers.id = ?")) {
+			$stmt->bind_param("i", $beer_id);
+			$stmt->execute();
+			$stmt->bind_result($name, $brewer, $type, $yeast, $perc, $purchse_price, $comment, $amount);
+
+			$html = new stdClass;
+
+			if ($stmt->fetch()) {
+				$stmt->close();
+				$html->name = $name;
+				$html->brewer = $brewer;
+				$html->type = $type;
+				$html->yeast = $yeast;
+				$html->perc = $perc;
+				$html->purchase_price = $purchse_price;
+				$html->comment = $comment;
+				$html->amount = $amount;
+			}
+			header('content-type: application/json');
+			print(json_encode($html));
+			
 		}
 	}
 } catch (Exception $e) {
