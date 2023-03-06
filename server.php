@@ -42,8 +42,8 @@ try {
 			}
 		}
 
-		if ($stmt = $conn->prepare("INSERT INTO `votes` (`beer_id`, `ip_adress`) VALUES (?, INET_ATON(?))")) {
-			$stmt->bind_param('is', $id, $_SERVER['REMOTE_ADDR']);
+		if ($stmt = $conn->prepare("INSERT INTO `votes` (`beer_id`, `ip_adress`) VALUES (?, INET_ATON(192.168))")) {
+			$stmt->bind_param('i', $id);
 			if ($stmt->execute()) {
 				$stmt->close();
 				$return = new stdClass;
@@ -58,15 +58,17 @@ try {
 
 		// alle bieren
 		// left join statement haalt niet alle biertjes op
-		if ($stmt = $conn->prepare('SELECT `id`, `name` FROM `beers`')) {
+		if ($stmt = $conn->prepare('SELECT beers.id, beers.name, beers.purchase_price, COUNT(votes.beer_id) FROM `beers` LEFT JOIN `votes` ON votes.beer_id = beers.id GROUP BY beers.id')) {
 			$stmt->execute();
-			$stmt->bind_result($id, $name);
+			$stmt->bind_result($id, $name, $price, $votes);
 
 			$html = [];
 			while ($stmt->fetch()) {
 				$tmp = new stdClass;
 				$tmp->id = $id;
 				$tmp->name = $name;
+				$tmp->price = $price;
+				$tmp->votes = $votes;
 				$html[] = $tmp;
 				// $html->like_count = $like_count;
 			}
