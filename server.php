@@ -58,15 +58,14 @@ try {
 
 		// alle bieren
 		// left join statement haalt niet alle biertjes op
-		if ($stmt = $conn->prepare("SELECT `id`, `name` FROM `beers`")) {
+		if ($stmt = $conn->prepare('SELECT `id`, `name` FROM `beers`')) {
 			$stmt->execute();
 			$stmt->bind_result($id, $name);
 
-			$html = new stdClass;
-
+			$html = [];
 			while ($stmt->fetch()) {
-				$html->id[] = $id;
-				$html->name[] = $name;
+				$html[] = $id;
+				$html[] = $name;
 				// $html->like_count = $like_count;
 			}
 			header('content-type: application/json');
