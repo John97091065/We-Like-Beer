@@ -1,0 +1,81 @@
+body{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background-color: #2E4756;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #88A2AA;
+    width: 500px;
+    height: 500px;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
+}
+
+img{
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+#pincode{
+    display: flex;
+}
+
+.text{
+    background-color: transparent;
+    color: black;
+    font-weight: 600;
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid grey;
+    border-radius: 4px;
+}
+
+#anaam{
+    margin-bottom: 70px;
+}
+
+.num{
+   background-color: transparent;
+   height: 100px;
+   width: 50px;
+   text-align: center;
+   outline: none;
+   margin: 5px;
+   font-size: medium;
+   border: 1px solid gray;
+   border-radius: .5rem;
+   color: green;
+   margin-bottom: 50px;
+}
+
+.btn{
+    height: 100px;
+    width: 150px;
+    border: 2px solid gray;
+    border-radius: .5rem;
+    font-size: medium;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+.btn:hover{
+    font-size: larger;
+}
+
+.space{
+    width: 20px;
+}
+
+.num:focus,
+.num:valid{
+    border-color: green;
+    border-width: 3px;
+    
+}

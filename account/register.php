@@ -39,10 +39,35 @@ if (isset($_POST["submit"])) {
 
 ?>
 
-<form method="POST">
-	<input type="text" name="name">
-	<input type="email" name="email">
-	<img src="<?= $url ?>">
-	<input type="text" name="pin">
-	<input type="submit" name="submit" value="registreren">
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pin.css">
+    <script src="pin.js" defer></script>
+    <title>6-pin</title>
+</head>
+<body>
+    <form method="POST" id="form">
+        <div class="container">
+            <input type="text" class="text" id="vnaam" name="name" placeholder="Voornaam" required>
+            <input type="text" class="text" id="email" name="email" placeholder="Email" required> 
+            <img src="<?= $url ?>">    
+            <img src="./frame.png">      
+            <div id="pincode" name="pin">
+                <input type="text" class="num" maxlength="1" onkeypress="isInputNumber(event)" required>
+                <input type="text" class="num" maxlength="1" onkeypress="isInputNumber(event)" required>
+                <input type="text" class="num" maxlength="1" onkeypress="isInputNumber(event)" required>
+                <div class="space"></div>
+                <input type="text" class="num" maxlength="1" onkeypress="isInputNumber(event)" required>
+                <input type="text" class="num" maxlength="1" onkeypress="isInputNumber(event)" required>
+                <input type="text" class="num" maxlength="1" onkeypress="isInputNumber(event)" required>
+            </div>
+            <button class="btn" name="submit" value="registreren" onclick="btnSend()">Stuur code</button>
+        </div>
+    </form>    
+</body>
+</html>
+   
