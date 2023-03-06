@@ -1,20 +1,20 @@
 body {
-  background-color: #fffbdb;
+  background-color: #f4f1bb;
 }
 
 .nav-container {
-  background-color: #da7422;
+  background-color: #ed6a5a;
 }
 
 .navbar-brand {
   font-family: "Anton", sans-serif;
   font-size: 1.5em;
-  color: #443627 !important;
+  color: #f4f1bb !important;
 }
 
 .nav-item > a {
   font-family: "Kanit", sans-serif;
-  color: #443627 !important;
+  color: #f4f1bb !important;
 }
 
 /* Grow Shadow */
@@ -32,18 +32,18 @@ body {
 .hvr-grow-shadow:hover,
 .hvr-grow-shadow:focus,
 .hvr-grow-shadow:active {
-  box-shadow: 0 10px 10px -10px #da7422;
+  box-shadow: 0 10px 10px -10px #ed6a5a;
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
 
 .form-control {
   border-color: #443627;
-  background-color: #fffbdb;
+  background-color: #f4f1bb;
 }
 
 .form-control:focus {
-  border-color: #443627;
+  border-color: #9bc1bc;
   background-color: #fffbdb;
   box-shadow: 0 0 0 0.1rem #443627;
 }
