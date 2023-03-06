@@ -56,3 +56,8 @@ body {
   border-color: #561d25;
   color: #f4f1bb;
 }
+
+.table {
+  margin: auto;
+  width: 50% !important;
+}

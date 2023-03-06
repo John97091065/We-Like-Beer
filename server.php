@@ -16,41 +16,27 @@ try {
 
 		require_once 'conn.php';
 
-		if ($stmt = $conn->prepare("SELECT `id` FROM `votes` WHERE `ip_adress` = INET_ATON(?)")) {
-			$stmt->bind_param("s", $_SERVER["REMOTE_ADDR"]);
-			$stmt->execute();
-			$stmt->bind_result($id);
+		if ($amount === -1) {
+			if ($stmt = $conn->prepare("DELETE FROM `votes` WHERE beer_id = ? LIMIT 1")) {
+				$stmt->bind_param("i", $id);
+				if ($stmt->execute()) {
+					$return = new stdclass;
+					$return->success = true;
 
-			if ($stmt->fetch()) {
-				$stmt->close();
-
-				if ($amount === -1) {
-					if ($stmt = $conn->prepare("DELETE FROM `votes` WHERE `id` = ?")) {
-						$stmt->bind_param("i", $id);
-						$stmt->execute();
-					}
-					$stmt->close();
+					header("Content-Type: application/json");
+					print(json_encode($return));
 				}
-
-				$return = new stdClass;
-				$return->success = true;
-
-				header('content-type: application/json');
-				print(json_encode($return));
-			} else {
-				$stmt->close();
 			}
-		}
+		} else {
+			if ($stmt = $conn->prepare("INSERT INTO `votes` (`beer_id`, `ip_adress`) VALUES (?, ?)")) {
+				$stmt->bind_param("is", $id, $_SERVER["REMOTE_ADDR"]);
+				if ($stmt->execute()) {
+					$return = new stdclass;
+					$return->success = true;
 
-		if ($stmt = $conn->prepare("INSERT INTO `votes` (`beer_id`, `ip_adress`) VALUES (?, INET_ATON(192.168))")) {
-			$stmt->bind_param('i', $id);
-			if ($stmt->execute()) {
-				$stmt->close();
-				$return = new stdClass;
-				$return->success = true;
-
-				header('content-type: application/json');
-				print(json_encode($return));
+					header("Content-Type: application/json");
+					print(json_encode($return));
+				}
 			}
 		}
 	} elseif ($fn === "getAllBeers") {
@@ -84,7 +70,7 @@ try {
 		if ($stmt = $conn->prepare("SELECT beers.name, beers.brewer, beers.type, beers.yeast, beers.perc, beers.purchase_price, rating.comment, rating.amount FROM `beers` LEFT JOIN `rating` ON   rating.beer_id = beers.id where beers.id = ?")) {
 			$stmt->bind_param("i", $beer_id);
 			$stmt->execute();
-			$stmt->bind_result($name, $brewer, $type, $yeast, $perc, $purchse_price, $comment, $amount);
+			$stmt->bind_result($name, $brewer, $type, $yeast, $perc, $purchase_price, $comment, $amount);
 
 			$html = new stdClass;
 
@@ -95,7 +81,7 @@ try {
 				$html->type = $type;
 				$html->yeast = $yeast;
 				$html->perc = $perc;
-				$html->purchase_price = $purchse_price;
+				$html->purchase_price = $purchase_price;
 				$html->comment = $comment;
 				$html->amount = $amount;
 			}
@@ -103,6 +89,8 @@ try {
 			print(json_encode($html));
 			
 		}
+	} else {
+		echo "that is no function";
 	}
 } catch (Exception $e) {
 	$return = new stdClass;

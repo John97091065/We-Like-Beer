@@ -10,7 +10,8 @@
   <!-- Bootstrap CSS v5.2.1 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
+    <link href="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
 
@@ -55,16 +56,60 @@
     </div>
   </header>
   <main>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="text-center my-2">Welkom bij BeerTastic</h1>
+          <p class="text-center my-2">Hier vind je alle informatie over bier</p>
+        </div>
+      </div>    
+    </div>
+
+      <div class="col-md-12">
+
+    <table id="table" class="table-hover">
+      <thead>
+        <tr>
+          <!-- <th data-field="id">id</th> -->
+          <th data-field="name">naam</th>
+          <th data-field="price">prijs</th>
+          <th data-field="upvote">+</th>
+          <th data-field="downvote">-</th>
+          <th data-field="votes">votes</th>
+        </tr>
+      </thead>
+    </table>
+    </div>
+  </main>
+
+<script src="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.js"></script>
 
 
+<script>
+var $table = $('#table');
 
+  $(async function() {
+  
+  // do an ajax call here to get the response. your response should be like responseData
+  var responseData = await getBeers();
+    console.log(responseData);
+  var data = [];
 
+  Object.keys(responseData).forEach(function(key){ 
+  
+  var value = responseData[key]; 
 
+  console.log(value);
+  value["upvote"] = "<input type='button' class='upvote' onclick='vote(" + value["id"] + ", 1)' value='+1'>"
+  value["downvote"] = "<input type='button' class='downvote' onclick='vote(" + value["id"] + ", -1)' value='-1'>"
 
+  data.push(value);
+  })
+  
+  $table.bootstrapTable({data: data});
+  });
 
-  <script>
-	window.onload = getBeers;
-	async function getBeers() {
+  async function getBeers() {
 		req = await fetch("server.php?fn=getAllBeers", {
 			method: 'GET',
 			headers: {
@@ -72,22 +117,24 @@
 			}
 		});
 		rep = await req.json();
-		console.log(rep);
+    
+    return rep;
 	}
-
-	/**
-	 * @param {int} id - the beer id
-	 * @param {int} amount - 1 or -1 for direction
-	 */
-	async function vote(id, amount) {
-		req = await fetch("server.php?fn=vote&id=" + id + "&amount=" . amount, {
+  
+  async function vote(id, amount) {
+		req = await fetch("server.php?fn=vote&id=" + id + "&amount=" + amount, {
 			method: 'GET',
 			headers: {
-				
+				'Content-Type': 'application/json'
 			}
 		})
+    rep = await req.json();
+    console.log(rep.success);
+    if (rep.success) {
+      window.location.href = window.location.href;
+    }
 	}
-</script>
+  </script>
 
   </main>
   <footer>
