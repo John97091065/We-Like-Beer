@@ -38,12 +38,21 @@ body {
 }
 
 .form-control {
-  border-color: #443627;
+  font-family: "Kanit", sans-serif;
+  border-color: #561d25;
+  outline: #561d25;
   background-color: #f4f1bb;
 }
 
 .form-control:focus {
-  border-color: #9bc1bc;
-  background-color: #fffbdb;
-  box-shadow: 0 0 0 0.1rem #443627;
+  border-color: #561d25;
+  background-color: #f4f1bb;
+  box-shadow: 0 0 0 0.1rem #561d25;
+}
+
+.btn {
+  font-family: "Kanit", sans-serif;
+  background-color: #561d25;
+  border-color: #561d25;
+  color: #f4f1bb;
 }
