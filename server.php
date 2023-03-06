@@ -64,8 +64,10 @@ try {
 
 			$html = [];
 			while ($stmt->fetch()) {
-				$html[] = $id;
-				$html[] = $name;
+				$tmp = new stdClass;
+				$tmp->id = $id;
+				$tmp->name = $name;
+				$html[] = $tmp;
 				// $html->like_count = $like_count;
 			}
 			header('content-type: application/json');
