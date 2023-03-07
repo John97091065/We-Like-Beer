@@ -45,6 +45,12 @@
         <li class="nav-item">
           <a class="nav-link hvr-grow-shadow" href="#">Alle bieren</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link hvr-grow-shadow" href="account/login.php">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link hvr-grow-shadow" href="account/register.php">Register</a>
+        </li>
       </ul>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Vul biersoort in.." aria-label="Search">

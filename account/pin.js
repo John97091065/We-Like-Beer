@@ -1,7 +1,6 @@
 const nums = document.querySelectorAll('.num')
 const form = document.querySelector('form')
 document.addEventListener('paste', handlePaste);
-console.log('123459');
 
 function handlePaste(evt)
 {
