@@ -1,9 +1,12 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+
 body {
-  background-color: #f4f1bb;
+  background-color: #f4f1bb !important;
 }
 
 .nav-container {
   background-color: #ed6a5a;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .navbar-brand {
@@ -60,4 +63,57 @@ body {
 .table {
   margin: auto;
   width: 50% !important;
+
+  outline: #561d25 !important;
+}
+
+.table-text {
+  font-family: "Kanit", sans-serif;
+  background-color: #ed6a5a !important;
+  color: #f4f1bb;
+}
+
+.th-inner {
+  outline: 1px solid #561d25;
+}
+
+.table td {
+  border: 1px solid #561d25;
+}
+
+.table-hover tbody tr:hover td,
+.table-hover tbody tr:hover th {
+  background-color: #f4f1bb !important;
+  color: #561d25 !important;
+}
+
+.upvote {
+  background-color: #f4f1bb;
+  border: 0px solid;
+
+  border-radius: 50px;
+}
+
+.downvote {
+  background-color: #f4f1bb;
+  border: 0px solid;
+
+  border-radius: 50px;
+}
+
+.bi-hand-thumbs-up-fill,
+.bi-hand-thumbs-down-fill {
+  color: #561d25 !important;
+}
+
+h1 {
+  font-family: "Anton", sans-serif;
+  font-size: 2em;
+  color: #561d25;
+}
+
+p {
+  font-family: "Kanit", sans-serif;
+  font-size: 1em;
+  color: #561d25;
 }
