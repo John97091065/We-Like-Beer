@@ -62,7 +62,7 @@ if (isset($_POST["submit"])) {
 
 	<script src="pin.js" defer></script>
 
-	<title>Login</title>
+	<title>Register</title>
 </head>
 
 <body>	
