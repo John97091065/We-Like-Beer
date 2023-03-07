@@ -46,7 +46,10 @@
           <a class="nav-link hvr-grow-shadow" href="#">Alle bieren</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active hvr-grow-shadow" aria-current="page" href="account/login.php">Login</a>
+          <a class="nav-link hvr-grow-shadow" href="account/login.php">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link hvr-grow-shadow" href="account/register.php">Register</a>
         </li>
       </ul>
       <form class="d-flex" role="search">
