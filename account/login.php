@@ -17,6 +17,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
 }
 ?>
 
+
 <form method="post">
 	<input type="text" name="Fname">
 	<input type="text" name="Lname">
