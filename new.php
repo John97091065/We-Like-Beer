@@ -14,7 +14,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
-
+  
     <!-- Google Fonts -->
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Kanit:ital@0;1&display=swap');
@@ -71,11 +71,11 @@
       <thead>
         <tr>
           <!-- <th data-field="id">id</th> -->
-          <th data-field="name">naam</th>
-          <th data-field="price">prijs</th>
-          <th data-field="upvote">+</th>
-          <th data-field="downvote">-</th>
-          <th data-field="votes">votes</th>
+          <th data-field="name" class="table-text">Naam</th>
+          <th data-field="price" class="table-text">Prijs</th>
+          <th data-field="upvote" class="table-text text-center">+</th>
+          <th data-field="downvote" class="table-text text-center">-</th>
+          <th data-field="votes" class="table-text">Votes</th>
         </tr>
       </thead>
     </table>
@@ -100,11 +100,11 @@ var $table = $('#table');
   var value = responseData[key]; 
 
   console.log(value);
-  value["upvote"] = "<input type='button' class='upvote' onclick='vote(" + value["id"] + ", 1)' value='+1'>"
-  value["downvote"] = "<input type='button' class='downvote' onclick='vote(" + value["id"] + ", -1)' value='-1'>"
+  value["upvote"] = "<button type='button' class='upvote' onclick='vote(" + value["id"] + ", 1)' value='+1'><i class='bi bi-hand-thumbs-up-fill'></i></button>"
+  value["downvote"] = "<button type='button' class='downvote' onclick='vote(" + value["id"] + ", -1)' value='-1'><i class='bi bi-hand-thumbs-down-fill'></i></button>"
 
   data.push(value);
-  })
+  })  
   
   $table.bootstrapTable({data: data});
   });
