@@ -61,7 +61,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
           <a class="nav-link hvr-grow-shadow" href="#">Favoriete bier</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link hvr-grow-shadow" href="#">Alle bieren</a>
+          <a class="nav-link hvr-grow-shadow" href="../new.php">Alle bieren</a>
         </li>
         <li class="nav-item">
           <a class="nav-link hvr-grow-shadow" href="login.php">Login</a>
