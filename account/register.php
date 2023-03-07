@@ -52,7 +52,7 @@ if (isset($_POST["submit"])) {
     <link href="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <!-- Custom CSS -->
-  <link rel="stylesheet" href="account.css">
+  <link rel="stylesheet" href="style.css">
 
     <!-- Google Fonts -->
   <style>
@@ -103,15 +103,20 @@ if (isset($_POST["submit"])) {
     </div>
   </header>
 	<div class="container">
-		<form method="post">			
-			<input type="text" name="Fname" class="form-control" placeholder="Naam">
-            <input type="text" name="Fname" class="form-control" placeholder="Achternaam">
-			<input type="text" name="email" class="form-control" placeholder="Email">
-            <input type="password" name="Fname" class="form-control" placeholder="Wachtwoord">
-            <input type="password" name="Fname" class="form-control" placeholder="Wachtwoord herhalen">
-			
-			<input type="submit" name="submit" class="btn" value="Register">
+    <div class="row">
+      
+		<form method="post" class="form my-5 mx-auto text-center">
+        <h1 class="form-title my-2">Register</h1>
+        <div class="col-8 mx-auto">
+      <input type="text" name="Fname" class="form-control my-3" placeholder="Naam">
+      <input type="text" name="Lname" class="form-control my-3" placeholder="Achternaam">
+			<input type="text" name="email" class="form-control my-3" placeholder="Email">
+      <input type="text" name="ww" class="form-control my-3" placeholder="Wachtwoord">
+      <input type="text" name="ww_2" class="form-control my-3" placeholder="Wachtwoord Herhalen">
+      </div>
+			<input type="submit" name="submit" class="btn form-btn my-5" value="Register">
 		</form>
+    </div>
 	</div>
 </body>
 </html>
