@@ -87,6 +87,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
         <div class="col-8 mx-auto">
       <input type="text" name="Fname" class="form-control my-3" placeholder="Naam">
 			<input type="text" name="email" class="form-control my-3" placeholder="Email">
+      
       </div>
 			<label for="pincode" class="pincode">Pincode</label>
 			<div id="pincode" name="pin" class="pin-layout my-2 mx-1">
