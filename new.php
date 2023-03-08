@@ -24,45 +24,51 @@
 </head>
 
 <body>
-	<header>
-		<!-- place header here -->
-		<div class="container-fluid nav-container">
-			<nav class="navbar navbar-expand-lg py-2 mx-2 shift">
-				<div class="container-fluid">
-					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon"></span>
-					</button>
-					<a class="navbar-brand" href="#">BeerTastic</a>
-					<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-						<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-							<li class="nav-item">
-								<a class="nav-link active hvr-grow-shadow" aria-current="page" href="#">Home</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link hvr-grow-shadow" href="#">Favoriete bier</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link hvr-grow-shadow" href="#">Alle bieren</a>
-							</li>
-						</ul>
-						<form class="d-flex" role="search">
-							<input class="form-control me-2" type="search" placeholder="Vul biersoort in.." aria-label="Search">
-							<button class="btn" type="submit">Zoeken</button>
-						</form>
-					</div>
-				</div>
-			</nav>
-		</div>
-	</header>
-	<main>
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<h1 class="text-center my-2">Welkom bij BeerTastic</h1>
-					<p class="text-center my-2">Hier vind je alle informatie over bier</p>
-				</div>
-			</div>
-		</div>
+  <header>
+    <!-- place header here -->
+    <div class="container-fluid nav-container">
+        <nav class="navbar navbar-expand-lg py-2 mx-2 shift">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">BeerTastic</a>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active hvr-grow-shadow" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link hvr-grow-shadow" href="#">Favoriete bier</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link hvr-grow-shadow" href="new.php">Alle bieren</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link hvr-grow-shadow" href="account/login.php">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link hvr-grow-shadow" href="account/register.php">Register</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Vul biersoort in.." aria-label="Search">
+        <button class="btn" type="submit">Zoeken</button>
+      </form>
+    </div>
+  </div>
+</nav>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="text-center my-2">Welkom bij BeerTastic</h1>
+          <p class="text-center my-2">Hier vind je alle informatie over bier</p>
+        </div>
+      </div>    
+    </div>
 
 		<div class="col-md-12">
 

@@ -113,6 +113,7 @@ if (isset($_POST["submit"])) {
 			<input type="text" name="email" class="form-control my-3" placeholder="Email">
       <input type="password" name="ww" class="form-control my-3" placeholder="Wachtwoord">
       <input type="password" name="ww_2" class="form-control my-3" placeholder="Wachtwoord Herhalen">
+      <img class="qr" src="<?= $url ?>"> 
       </div>
 			<input type="submit" name="submit" class="btn form-btn my-5" value="Register">
 		</form>
