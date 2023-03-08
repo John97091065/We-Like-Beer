@@ -8,7 +8,6 @@ declare(strict_types=1);
 $fn = filter_input(INPUT_GET, 'fn');
 
 try {
-
 	if ($fn === 'vote') {
 		$id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 		$amount = filter_input(INPUT_GET, 'amount', FILTER_VALIDATE_INT);
@@ -39,6 +38,11 @@ try {
 				}
 			}
 		}
+	} elseif ($fn === "rating") {
+		// $amount - voor aantal sterren
+		// $review - comment als die erbij gegeven word
+		// $bierid - voor welk bier word deze review geschreven
+		// naar database uploaden
 	} elseif ($fn === "getTbeers") {
 		require_once "conn.php";
 
