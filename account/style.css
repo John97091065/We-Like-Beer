@@ -119,7 +119,7 @@ h1 {
 p {
   font-family: "Kanit", sans-serif;
   font-size: 1em;
-  color: #561d25;
+  color: #561d25;r
 }
 
 .form {
@@ -160,7 +160,8 @@ p {
   font-size: medium;
   border: 2px solid #561d25;
   border-radius: 2rem;
-  color: #f4f1bb;
+  font-family: "Kanit", sans-serif;
+  
 
   box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
     rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
