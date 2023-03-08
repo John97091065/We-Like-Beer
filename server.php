@@ -39,6 +39,26 @@ try {
 				}
 			}
 		}
+	} elseif ($fn === "getTbeers") {
+		require_once "conn.php";
+
+		if ($stmt = $conn->prepare("SELECT beers.id, beers.name, beers.purchase_price, COUNT(votes.beer_id) FROM `beers` LEFT JOIN `votes` ON votes.beer_id = beers.id GROUP BY beers.id ORDER BY COUNT(votes.beer_id) LIMIT 3")) {
+			$stmt->execute();
+			$stmt->bind_result($id, $name, $price, $votes);
+			$html = [];
+			while ($stmt->fetch()) {
+				$tmp = new stdClass;
+				$tmp->id = $id;
+				$tmp->name = $name;
+				$tmp->price = $price;
+				$tmp->votes = $votes;
+				$html[] = $tmp;
+				// $html->like_count = $like_count;
+			}
+			header('content-type: application/json');
+			print(json_encode($html));
+			$stmt->close();
+		}
 	} elseif ($fn === "getAllBeers") {
 		require_once "conn.php";
 
