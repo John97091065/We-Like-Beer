@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Gegenereerd op: 30 jan 2023 om 14:10
--- Serverversie: 10.4.17-MariaDB
--- PHP-versie: 8.0.2
+-- Host: 127.0.0.1
+-- Generation Time: Mar 06, 2023 at 03:41 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `beers`
+-- Table structure for table `beers`
 --
 
 CREATE TABLE `beers` (
@@ -42,13 +42,13 @@ CREATE TABLE `beers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Gegevens worden geëxporteerd voor tabel `beers`
+-- Dumping data for table `beers`
 --
 
 INSERT INTO `beers` (`id`, `name`, `brewer`, `type`, `yeast`, `perc`, `purchase_price`, `deleted_at`, `created_at`, `updated_at`, `like_count`) VALUES
-(1, 'Abondance mirabellen', 'Brouwerij de Troch', 'overige', 'spontane', '0.04', '4.39', NULL, '2018-05-04 22:00:00', '2018-05-04 22:00:00', 0),
-(2, 'Abondance pêche', 'Brouwerij de Troch', 'overige', 'spontane', '0.04', '4.34', NULL, '2018-05-04 22:00:00', '2018-05-04 22:00:00', 0),
-(3, 'Adler', 'Brouwerij Haacht', 'dortmunder', 'lage', NULL, '3.53', NULL, '2018-05-04 22:00:00', '2018-05-04 22:00:00', 3),
+(1, 'Abondance mirabellen', 'Brouwerij de Troch', 'overige', 'spontane', '0.04', '4.39', NULL, '2018-05-04 22:00:00', '2018-05-04 22:00:00', 3),
+(2, 'Abondance pêche', 'Brouwerij de Troch', 'overige', 'spontane', '0.04', '4.34', NULL, '2018-05-04 22:00:00', '2018-05-04 22:00:00', 2),
+(3, 'Adler', 'Brouwerij Haacht', 'dortmunder', 'lage', NULL, '3.53', NULL, '2018-05-04 22:00:00', '2018-05-04 22:00:00', 1),
 (4, 'Aerts 1900', 'Brouwerij Palm', 'overige', 'hoge met nof', '0.07', '2.66', NULL, '2018-05-04 22:00:00', '2018-05-04 22:00:00', 0),
 (5, 'Affligem christmas', 'Brouwerij de Smedt', 'overige', 'hoge', '0.07', '3.68', NULL, '2018-05-04 22:00:00', '2018-05-04 22:00:00', 0),
 (6, 'Affligem donker', 'Brouwerij de Smedt', 'dubbel', 'hoge met nof', '0.06', '2.44', NULL, '2018-05-04 22:00:00', '2018-05-04 22:00:00', 0),
@@ -93,11 +93,11 @@ INSERT INTO `beers` (`id`, `name`, `brewer`, `type`, `yeast`, `perc`, `purchase_
 (45, 'Belle Vue frambozen', 'Belle Vue', 'framboise', 'spontane', '0.05', '3.60', NULL, '2018-05-04 22:00:00', '2000-07-01 22:00:00', 0),
 (46, 'Belle Vue gueuze lambic \"cuvée\"', 'Belle Vue', 'gueuze', 'spontane', '0.05', '4.83', NULL, '2018-05-04 22:00:00', '2018-05-04 22:00:00', 0),
 (47, 'Belle Vue kriek lambic', 'Belle Vue', 'kriekenbier', 'spontane', '0.05', '2.37', NULL, '2018-05-04 22:00:00', '2018-05-04 22:00:00', 0),
-(48, 'Belle Vue kriek lambic \"cuvée\"', 'Belle Vue', 'kriekenbier', 'spontane', '0.05', '4.33', NULL, '2018-05-04 22:00:00', '2018-05-04 22:00:00', 1),
+(48, 'Belle Vue kriek lambic \"cuvée\"', 'Belle Vue', 'kriekenbier', 'spontane', '0.05', '4.33', NULL, '2018-05-04 22:00:00', '2018-05-04 22:00:00', 0),
 (49, 'Benedict', 'Brouwerij De Kluis (groep Interbrew)', 'dubbel', 'hoge met nof', '0.07', '3.57', NULL, '2018-05-04 22:00:00', '2018-05-04 22:00:00', 0),
 (50, 'Bergenbier', 'Artois (groep Interbrew)', 'pilsener', 'lage', '0.05', '2.84', NULL, '2018-05-04 22:00:00', '2018-05-04 22:00:00', 0),
 (51, '`n Seule', 'Brouwerij Slagmuylder', 'overige', 'hoge met nof', '0.06', '4.49', NULL, '2018-05-04 22:00:00', '2018-05-04 22:00:00', 0),
-(52, '`t Paterke Achelse Kluis', 'Brouwerij R. Gielen', 'dubbel', 'hoge met nof', '0.06', '2.94', NULL, '2018-05-04 22:00:00', '2018-05-04 22:00:00', 2),
+(52, '`t Paterke Achelse Kluis', 'Brouwerij R. Gielen', 'dubbel', 'hoge met nof', '0.06', '2.94', NULL, '2018-05-04 22:00:00', '2018-05-04 22:00:00', 0),
 (53, '203 Hamse witten', 'Brouwerij Vieille Villers', 'witbier', 'lage', '0.05', '2.23', NULL, '2018-05-04 22:00:00', '2018-05-04 22:00:00', 0),
 (54, '406 Wuitensbier', 'Brouwerij Vieille Villers', 'dubbel', 'hoge', '0.06', '3.32', NULL, '2018-05-04 22:00:00', '2018-05-04 22:00:00', 0),
 (55, '1664 de Kronenbourg', 'Alken-Maes (zetel Alken)', 'superpils', 'lage', '0.06', '4.93', NULL, '2018-05-04 22:00:00', '2018-05-04 22:00:00', 0),
@@ -802,60 +802,7 @@ INSERT INTO `beers` (`id`, `name`, `brewer`, `type`, `yeast`, `perc`, `purchase_
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `customers`
---
-
-CREATE TABLE `customers` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `barname` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `address` varchar(35) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `homenr` varchar(8) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `zip` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `city` varchar(35) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `phone` varchar(17) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `country` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `price_reduction` decimal(5,2) DEFAULT NULL,
-  `bankcard` varchar(34) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Gegevens worden geëxporteerd voor tabel `customers`
---
-
-INSERT INTO `customers` (`id`, `barname`, `address`, `homenr`, `zip`, `city`, `phone`, `country`, `price_reduction`, `bankcard`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(5, 'Micheal\'s Bar', 'Barstreet', '127', '87432-5327', 'New York', '01566678353556', 'USA', '5.50', '371449635398431', NULL, NULL, NULL),
-(6, 'Bolt', 'Center square', '45-222', '12462-5329', 'New York', '01645678323456', 'USA', '2.00', '371449635366442', NULL, NULL, NULL),
-(7, 'Martin', 'Peaks high', '127', '77368', 'Torento', '07654123456', 'Canada', '2.00', '4012888888881881', NULL, NULL, NULL),
-(8, 'Winston', 'Queens boulevard', '127', '1205', 'Brisban', '0321123678', 'Australia', '2.00', '5105105199673480', NULL, NULL, NULL),
-(9, 'Stadscafe Het Refter', 'Bethlehemkerkplein', '35a', '8011PH', 'Zwolle', '0383031841', 'the Netherlands', '3.00', 'NL3300000000123456789', NULL, NULL, NULL),
-(10, 'Lambiek', 'Maria straat', '78', '8404', 'Gent', '017623457', 'Belgium', '3.00', 'BE71096123456769', NULL, NULL, NULL),
-(11, 'Shilton', 'Rockies street', '127', '98765', 'Torento', '07623456', 'Canada', '3.60', '5105105105188334', NULL, NULL, NULL),
-(12, 'Karolina', 'Kings street', '23', '855346', 'Torento', '07654323456', 'Canada', '2.00', '37144263539845', NULL, NULL, NULL),
-(13, 'Charles', 'Hills', '127', 'EC1A 1BB', 'Hampshair', '076234567', 'UK', '1.70', 'GB98HIGB07009317654123', NULL, NULL, NULL),
-(14, 'Ramesh', 'Uertabswe Qegebsh', '1', '123-567', 'Mumbai', '076543123456', 'India', '3.00', '5105105105434342', NULL, NULL, NULL),
-(15, 'Sundariya', 'Donker gracht', '25', '1033HH', 'Amsterdam', '031651234585', 'the Netherlands', '5.50', 'NL02INGB0123987654', NULL, NULL, NULL),
-(16, 'Steven', 'Dessert road', '127', '65431-6772', 'San Jose', '541234567', 'USA', '10.00', '40128888885151515', NULL, NULL, NULL),
-(17, 'Holmes', 'Alleylane', '21', 'L1A 0AH', '0567876543212', 'London', 'UK', '3.00', 'GB98MIDL07002645671973', NULL, NULL, NULL),
-(18, 'Rangarappa', 'Outashs', '127', '172-083', 'Bangalore', '0541234588', 'India', '2.20', '5172105177227717', NULL, NULL, NULL),
-(19, 'Stuart', 'Bridgeroad', '1', 'L1A 3AX', 'London', '0053577632345', 'UK', '2.00', 'GB98MIDL07009314466883', NULL, NULL, NULL),
-(20, 'Lamme Leen', 'Spui', '32', '2234HH', 'Utrecht', '031776445789', 'the Netherlands', '4.00', 'NL02ABNA0126633221', NULL, NULL, NULL),
-(21, 'Fleming', 'Dustcreek', '33', '86003A', 'Brisban', '076542345', 'Australia', '2.50', '5105105105105100', NULL, NULL, NULL),
-(22, 'Yearannaidu', 'Bjegha', '127', '12132', 'Köln', '095434567754323', 'Germany', '3.00', 'DE91100001222123466332', NULL, NULL, NULL),
-(23, 'Albert\'s', '21 West', '127', '65432-5624', 'New York', '017653578933', 'USA', '12.00', '371449635554329', NULL, NULL, NULL),
-(24, 'Jacks', 'Abro alley', '55', '6670', 'Brisban', '087654234423', 'Australia', '5.00', '5985105105105940', NULL, NULL, NULL),
-(25, 'Im Loch', 'Droster Straße', '12', '45646', 'Hamburg', '04514793434', 'Germany', '2.00', 'DE91100000000235727927', NULL, NULL, NULL),
-(26, 'Karl', 'Charels lane', '87', 'L1A 1RK', 'London', '0764234567', 'UK', '4.00', 'GB98MIDL0750631823554', NULL, NULL, NULL),
-(27, 'Cook', 'Eastonstreet', '4', 'L1B 7AX', 'London', '0536545789', 'UK', '2.30', 'GB98MIDL07009312345678', NULL, NULL, NULL),
-(28, 'Albert\'s', 'Eroway', '127', '978-105', 'Bangalore', '096534799265', 'India', '2.00', '5105106655221569', NULL, NULL, NULL),
-(29, 'Gemütliches Stube', 'Güne straße', '102', '19993', 'Bitburg', '07654123456', 'Germany', '3.00', 'DE91100000000123456789', NULL, NULL, NULL);
-
--- --------------------------------------------------------
-
---
--- Tabelstructuur voor tabel `employees`
+-- Table structure for table `employees`
 --
 
 CREATE TABLE `employees` (
@@ -884,7 +831,7 @@ CREATE TABLE `employees` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Gegevens worden geëxporteerd voor tabel `employees`
+-- Dumping data for table `employees`
 --
 
 INSERT INTO `employees` (`id`, `firstname`, `lastname`, `prefix_name`, `department`, `employee_nr`, `branche`, `titles`, `salary_scale`, `allowance`, `salary`, `function`, `employee_since`, `birthday`, `address`, `homenr`, `zip`, `city`, `province`, `deleted_at`, `created_at`, `updated_at`) VALUES
@@ -939,7 +886,7 @@ INSERT INTO `employees` (`id`, `firstname`, `lastname`, `prefix_name`, `departme
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `failed_jobs`
+-- Table structure for table `failed_jobs`
 --
 
 CREATE TABLE `failed_jobs` (
@@ -955,30 +902,7 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `migrations`
---
-
-CREATE TABLE `migrations` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `batch` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Gegevens worden geëxporteerd voor tabel `migrations`
---
-
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(91, '2014_10_12_000000_create_users_table', 1),
-(92, '2014_10_12_100000_create_password_resets_table', 1),
-(93, '2019_08_19_000000_create_failed_jobs_table', 1),
-(94, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(95, '2021_11_04_122947_create_beer_tables', 1);
-
--- --------------------------------------------------------
-
---
--- Tabelstructuur voor tabel `orders`
+-- Table structure for table `orders`
 --
 
 CREATE TABLE `orders` (
@@ -991,7 +915,7 @@ CREATE TABLE `orders` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Gegevens worden geëxporteerd voor tabel `orders`
+-- Dumping data for table `orders`
 --
 
 INSERT INTO `orders` (`id`, `customer_id`, `employee_id`, `deleted_at`, `created_at`, `updated_at`) VALUES
@@ -1007,7 +931,7 @@ INSERT INTO `orders` (`id`, `customer_id`, `employee_id`, `deleted_at`, `created
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `order_beer`
+-- Table structure for table `order_beer`
 --
 
 CREATE TABLE `order_beer` (
@@ -1018,7 +942,7 @@ CREATE TABLE `order_beer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Gegevens worden geëxporteerd voor tabel `order_beer`
+-- Dumping data for table `order_beer`
 --
 
 INSERT INTO `order_beer` (`order_id`, `beer_id`, `amount`, `price`) VALUES
@@ -1043,7 +967,7 @@ INSERT INTO `order_beer` (`order_id`, `beer_id`, `amount`, `price`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `password_resets`
+-- Table structure for table `password_resets`
 --
 
 CREATE TABLE `password_resets` (
@@ -1055,7 +979,7 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `personal_access_tokens`
+-- Table structure for table `personal_access_tokens`
 --
 
 CREATE TABLE `personal_access_tokens` (
@@ -1073,84 +997,38 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `users`
+-- Table structure for table `rating`
 --
 
-CREATE TABLE `users` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Gegevens worden geëxporteerd voor tabel `users`
---
-
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'RootMe', 'root@app.com', '2021-12-22 07:49:44', '$2y$10$0WRPYX5mIMYpTBFwObG.OOY4EaVGhcVeSrx9ia/VUFD1cCgBFEk/6', 'te9muRoU6N', '2021-12-21 05:09:34', '2022-01-18 02:28:07'),
-(2, 'AdminMe', 'admin@app.com', '2022-01-19 09:18:20', '$2y$10$0WRPYX5mIMYpTBFwObG.OOY4EaVGhcVeSrx9ia/VUFD1cCgBFEk/6', 'qKLIunf9Io', '2022-01-19 09:18:20', '2022-01-19 09:18:20'),
-(3, 'UserMe', 'user@app.com', '2021-12-21 08:45:57', '$2y$10$0WRPYX5mIMYpTBFwObG.OOY4EaVGhcVeSrx9ia/VUFD1cCgBFEk/6', 'Ffw2CyFnLA', '2022-01-02 19:56:23', '2022-01-11 12:41:31'),
-(4, 'VisitorMe', 'visitor@app.com', '2021-12-22 11:02:27', '$2y$10$0WRPYX5mIMYpTBFwObG.OOY4EaVGhcVeSrx9ia/VUFD1cCgBFEk/6', '7YDsN1zxPC', '2021-12-28 00:37:20', '2022-01-13 18:24:26'),
-(5, 'Annamae Maggio DDS', 'user5@app.com', '2022-01-19 09:18:20', '$2y$10$0WRPYX5mIMYpTBFwObG.OOY4EaVGhcVeSrx9ia/VUFD1cCgBFEk/6', 'HAmqxyFxMq', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(6, 'Delaney Adams II', 'user6@app.com', '2022-01-19 09:18:21', '$2y$10$elLA8MsFLy34U5N.6xLg9u6hUM8Gvot7w2r6OkUfaJe0GFi/bzCVK', 'wjsAsr3HAo', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(7, 'Joesph Gorczany', 'user7@app.com', '2022-01-19 09:18:21', '$2y$10$V4d/Ysk153IDCcVoVW3otO421mK1EvIXpVmGHYHasJLTdgCRamtnG', 'vLr5OLQAPZ', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(8, 'Jerald Purdy Jr.', 'user8@app.com', '2022-01-19 09:18:21', '$2y$10$7N350McAWIMHRdxwqOlrMOwgfko0IJU6QnEjHu1YpctK9sFpwOmhG', 'cMvv6JC5Is', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(9, 'Ottis Boyer DDS', 'user9@app.com', '2022-01-19 09:18:21', '$2y$10$EdegspeDVAZ7cpGPApW//ujuLlQlv.V6Z3MfO77mLchwrD77jLBAe', 'YLG7mvPL2X', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(10, 'Jody Steuber', 'user10@app.com', '2022-01-19 09:18:21', '$2y$10$YrJUX18UC127onaaiJGIKuYeq7TYD.uNjgR8in8RhRliRXsYTqSDK', '48C7cWgFBO', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(11, 'Lourdes Cremin', 'user11@app.com', '2022-01-19 09:18:21', '$2y$10$eisjnP6aDi.NwJnAF3aoTedDK7tzn2pes.LfNUikZeq8wKRiSiSQi', 'ivaDAZdyfQ', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(12, 'Ed Boyer', 'user12@app.com', '2022-01-19 09:18:21', '$2y$10$FDLmE.RTPGTyMB2RrylrPus1lGJ1p0TYBLLG3Nnez7Try0s/TNzDe', 'cXvdBAgXik', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(13, 'Rebeca Bauch', 'user13@app.com', '2022-01-19 09:18:21', '$2y$10$clgKX5IzHlY6bGusHAP2FOOkaW2ChmKr1pxddkIAqaWOqsIMcfK4m', 'paZMvkuG4b', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(14, 'Giovanni Donnelly', 'user14@app.com', '2022-01-19 09:18:21', '$2y$10$ANMy1rKqQHG2rNsxDB0WB.xwfac54GxRH5.dLoA.9P7pjrCiKjwu6', 'yHjzku0z75', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(15, 'Greyson Lehner', 'user15@app.com', '2022-01-19 09:18:21', '$2y$10$BMRc69mj13Xnk3RQ69TwW.96dByjRd8gf0HjUNDR/KvyYPdNrnmOO', '6xtQ7G19h9', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(16, 'Dillon Ullrich', 'user16@app.com', '2022-01-19 09:18:21', '$2y$10$jsrhqJuWt6UFhvLziP4j2eXsE/LitL56j3F.rtd/H7dCZKzZ6m3Li', 'GvaGoo8y4t', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(17, 'Kaelyn Ward', 'user17@app.com', '2022-01-19 09:18:21', '$2y$10$Xo52qoATkgbU.quh2TadYepjFtonWfbRZ.vlpGWUAj2V0ssO/rBce', 'wX77FRWENU', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(18, 'Ottilie Abbott Jr.', 'user18@app.com', '2022-01-19 09:18:21', '$2y$10$LHLxsgBdtUXU5xxpUHXEnuxjRV.8DAEJ2s7iFavSFV.r5x.1exqMu', 'SJdifHAAt4', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(19, 'Prof. Grayce Erdman III', 'user19@app.com', '2022-01-19 09:18:21', '$2y$10$U979RFgKPr1sA3jp8jQh4.ONhsU0wzx5yJ8syNK6b1NfQ6kvt6Wce', '9n2dd3sFEc', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(20, 'Coy Hayes', 'user20@app.com', '2022-01-19 09:18:21', '$2y$10$4igIS0ME2jKyquPaXc5ZPebjCCaFMnID7wVYMMUHr08VyRFE5Cuii', 'bbEJ1Fb430', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(21, 'Chelsea Davis I', 'user21@app.com', '2022-01-19 09:18:21', '$2y$10$jM6hWcaGzFq4JnrCcPbRnu/cOLpSnKAoca/C97xvSTnX8D4ElavWq', 'Fn1Pm7fvDh', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(22, 'Dr. Isac Prosacco DVM', 'user22@app.com', '2022-01-19 09:18:21', '$2y$10$x.CqI3nT0xmhZQnA8cnPk.kWiZ8sX7aIiSfXZj5LpOo7OAul6EO..', 'YKxWiA1YVa', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(23, 'Ricky Leffler', 'user23@app.com', '2022-01-19 09:18:21', '$2y$10$OSldkKNvKqBwFNDNvfh6CuzOmkxlU.OaZbNH2Oahsg4z2TYT.iYiu', 'KwugIsselm', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(24, 'Yadira Greenholt', 'user24@app.com', '2022-01-19 09:18:21', '$2y$10$y7b.G9PjJGnJi2NW5Bo3nuLF5Wo7NnA0KK3jNA01nlZqsZSqSvFOW', 'nJiyo1SmYp', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(25, 'Elmer Dicki', 'user25@app.com', '2022-01-19 09:18:22', '$2y$10$oqVPSGb8tSVj.9v/hPCGH.kY9TmJWeHiBRfCWUcSNh4iq6T6ohM5O', 'MhHHpbAvXK', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(26, 'Brianne Jaskolski Jr.', 'user26@app.com', '2022-01-19 09:18:22', '$2y$10$8H2NWx.P.A5LRoWYYgVeWuSHWb0dp02DqRDrpjWaYqSAhKW5fFspm', '3hAxT0aKYz', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(27, 'Maria Heidenreich I', 'user27@app.com', '2022-01-19 09:18:22', '$2y$10$WU41BtZB52DTUviOdCdgm.PTM7y.hTgJZQ6dYJXCgpHThEOBsp8HG', 'CxluPudVSG', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(28, 'Mrs. Courtney Mosciski III', 'user28@app.com', '2022-01-19 09:18:22', '$2y$10$jVBS/cDyUdxE2U3iOkL5LuOkM7p1J8zG20G686HrE.UGj.OMkDhG6', 'QPLbK8sVN3', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(29, 'Dr. Jane Streich I', 'user29@app.com', '2022-01-19 09:18:22', '$2y$10$EL1T0.mcBgZfMSmvSI2CEeCtlgwGzlMQslhqhLCTgI6WwOTHNPtge', 'sRJfMbGHJJ', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(30, 'Prof. Angelica Bergnaum', 'user30@app.com', '2022-01-19 09:18:22', '$2y$10$u8lQ9mjO9c92tn6QDPiFGOxAu.P88bSvq0RSL5s5xiDdd2SzUMzwG', 'kwF9VWIKhY', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(31, 'Malinda Kovacek', 'user31@app.com', '2022-01-19 09:18:22', '$2y$10$Q8/UjG6DA86phtVEgVKjJeX9T78Cjj33lSmjkrkPOwo4BkYAFXVC.', 'gqLvEnkkfd', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(32, 'Mr. Junior Shields', 'user32@app.com', '2022-01-19 09:18:22', '$2y$10$YjKeatIRILkZ22WowfquL.UP5RAQCiJSe/j2eTDyatP0trd5zm0tS', 'my4ISKUzzk', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(33, 'Jan Ward DDS', 'user33@app.com', '2022-01-19 09:18:22', '$2y$10$nb0SkAnTCN0hGhCPawjcFebHFO6/QddlWn69sCu8r2Kj6ZlvRyFa2', 'eigCxa9awE', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(34, 'Garry Cassin', 'user34@app.com', '2022-01-19 09:18:22', '$2y$10$7Fkkxh4ZwU6iyzYi04zTy.9w4TBxKgNGL6clAYaSnzt57JSjwwFIe', 'oIQ1DCf59Z', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(35, 'Mr. Doug Kuhic MD', 'user35@app.com', '2022-01-19 09:18:22', '$2y$10$PrTOaab42j6Q.gWwMseUyeIe5i1Q.PTsDvW9/WKlIo.zbq4Vt.9sK', 'FgvA0lGEtC', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(36, 'Amos Corwin', 'user36@app.com', '2022-01-19 09:18:22', '$2y$10$sFRsF1D7HwrjDgnbLyktAePnzwSDLw8o8Nw.AIr2Xo6HkqZ7zO04m', 'zDTsgjprVX', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(37, 'Adolph Maggio', 'user37@app.com', '2022-01-19 09:18:22', '$2y$10$cSMU7gREAl./6lESZKu.huv10ZZn5UMr5tAgAxDuY9FJzBzmaOyN2', 'RyWisYxcpc', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(38, 'Jackson Runte Jr.', 'user38@app.com', '2022-01-19 09:18:22', '$2y$10$2smLnjyWgj.OzcSbQf/RZ.MAVlGSmznolMCnQskC/pffS4h.s8cca', 'eypjziBfFm', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(39, 'Gail Reynolds II', 'user39@app.com', '2022-01-19 09:18:22', '$2y$10$4z2dYAAF86.maU6XZynUE.I51V2EVYEXqI8iY/UCajFit768SfhPe', 'YcdlJPaIG3', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(40, 'Dr. Juliet Hettinger', 'user40@app.com', '2022-01-19 09:18:22', '$2y$10$lXyBM/g8at6j/eq6hBSUZeQ2a8B0UJmlxbTPLRzPubAIjzmKCZwja', 'sDTpk2CfxG', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(41, 'Ms. Justine Wintheiser Jr.', 'user41@app.com', '2022-01-19 09:18:22', '$2y$10$zLSj474qYlLGSpuLKHPF/e5rNUwxoCTRZ/l6iGh3x0lAYkGrVrXGS', '9vA26OOtOI', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(42, 'Prof. Rosie Friesen', 'user42@app.com', '2022-01-19 09:18:22', '$2y$10$X5BjRBommbjWlfQJO8d0LOZz5.k9Q/faRQipgBwi5E00hmg9Q4mde', 'CgFnCli2dY', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(43, 'Felipe McKenzie', 'user43@app.com', '2022-01-19 09:18:23', '$2y$10$IBmG5jQAvjLuClnwhY/PDewccgu5ZhvgLhwdmZ04UlTiaNyhIwUra', 'LulfUzkpIN', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(44, 'Trey Willms', 'user44@app.com', '2022-01-19 09:18:23', '$2y$10$cWInUcXppK3B/qT02nKbh.lwTJZ2rayHBBJ.8428RU8/YadLIqN7q', 'Pp7gwMM1zn', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(45, 'Hope Schinner', 'user45@app.com', '2022-01-19 09:18:23', '$2y$10$ocOmByfUHgZJRkVc1X9rfOSkEJLqKAM6qo65i3f3GQ8TPtMqgMWnm', '90o6HNIvgO', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(46, 'Chelsie Bergnaum', 'user46@app.com', '2022-01-19 09:18:23', '$2y$10$luM/B9kIMWu56qtQ2Gal9uNuOSTbZyDufpXNmvtN6MBW11N6ofp6a', 'BhZ47TnR3L', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(47, 'Edmund Little', 'user47@app.com', '2022-01-19 09:18:23', '$2y$10$ViQ.uZzdw/tYm6rrFYHm/e..6boer/w16Kty4aPi6zl6u0K5anhni', 'j9wPb7Dm58', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(48, 'Ms. Telly Roob DVM', 'user48@app.com', '2022-01-19 09:18:23', '$2y$10$/m6X9dJeu68/wySbyXpZBuy8Nwdy.fcngNHvNCDrX6ubyh3aUCmVm', 'XLSbUnK6cg', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(49, 'Baron Hessel', 'user49@app.com', '2022-01-19 09:18:23', '$2y$10$pzdZ2LdGbJA3aT.cXTzNJ.LXs7MoxA69rfOkpNhTX7YM1vRY9LXEe', 'E1lndnjA2O', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(50, 'Daniella Purdy III', 'user50@app.com', '2022-01-19 09:18:23', '$2y$10$9OmM3dK/ovJLU/XUK5uUBOAgcL70wji4BkTnMvYVhs2fwXaPqWD/y', 'grutW8fhZ4', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(51, 'Miss Cara Heidenreich Sr.', 'user51@app.com', '2022-01-19 09:18:23', '$2y$10$mZ8pJyMOPcRLNrnCAQn.wOuM/mckdHlXoK/KaXoz0IsmhOPWxPQw2', 'kMUoZo7AwO', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(52, 'Maurice Grant', 'user52@app.com', '2022-01-19 09:18:23', '$2y$10$x8j6Mdb0GTQNWkgQrHoSLONmAyxk76LL7iZCf0FzviPNFTMGjAW6y', 'MpelAdJgwx', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(53, 'Berry Yundt', 'user53@app.com', '2022-01-19 09:18:23', '$2y$10$sIAV4YOYuM6P12whzKQZkOzZZ5DcE/qo9UAhzFFifz4R6YAf/OhyO', 'hNXVOKl8iG', '2022-01-19 09:18:23', '2022-01-19 09:18:23'),
-(54, 'Raymond Tillman', 'user54@app.com', '2022-01-19 09:18:23', '$2y$10$78hdByz.MdI.6wMq1lWW9OAf2nYe3WCn27uEsEdnkWP9wNV/xGDbO', '089HxGWkAm', '2022-01-19 09:18:23', '2022-01-19 09:18:23');
+CREATE TABLE `rating` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `beer_id` int(11) NOT NULL,
+  `amount` float NOT NULL,
+  `comment` varchar(200) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `user_beer`
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `name` varchar(45) NOT NULL,
+  `email` varchar(80) NOT NULL,
+  `password` varchar(72) NOT NULL,
+  `secret` char(64) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_beer`
 --
 
 CREATE TABLE `user_beer` (
@@ -1160,7 +1038,7 @@ CREATE TABLE `user_beer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Gegevens worden geëxporteerd voor tabel `user_beer`
+-- Dumping data for table `user_beer`
 --
 
 INSERT INTO `user_beer` (`user_id`, `beer_id`, `likerate`) VALUES
@@ -1174,7 +1052,7 @@ INSERT INTO `user_beer` (`user_id`, `beer_id`, `likerate`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `visitors`
+-- Table structure for table `visitors`
 --
 
 CREATE TABLE `visitors` (
@@ -1183,49 +1061,56 @@ CREATE TABLE `visitors` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Gegevens worden geëxporteerd voor tabel `visitors`
+-- Dumping data for table `visitors`
 --
 
 INSERT INTO `visitors` (`id`, `remote_addr`) VALUES
 (1, '::1');
 
+-- --------------------------------------------------------
+
 --
--- Indexen voor geëxporteerde tabellen
+-- Table structure for table `votes`
+--
+
+CREATE TABLE `votes` (
+  `id` bigint(20) NOT NULL,
+  `beer_id` bigint(20) UNSIGNED NOT NULL,
+  `ip_adress` int(11) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `votes`
+--
+
+INSERT INTO `votes` (`id`, `beer_id`, `ip_adress`) VALUES
+(12, 1, 3221225640);
+
+--
+-- Indexes for dumped tables
 --
 
 --
--- Indexen voor tabel `beers`
+-- Indexes for table `beers`
 --
 ALTER TABLE `beers`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexen voor tabel `customers`
---
-ALTER TABLE `customers`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexen voor tabel `employees`
+-- Indexes for table `employees`
 --
 ALTER TABLE `employees`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexen voor tabel `failed_jobs`
+-- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
--- Indexen voor tabel `migrations`
---
-ALTER TABLE `migrations`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexen voor tabel `orders`
+-- Indexes for table `orders`
 --
 ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`),
@@ -1233,20 +1118,20 @@ ALTER TABLE `orders`
   ADD KEY `orders_employee_id_foreign` (`employee_id`);
 
 --
--- Indexen voor tabel `order_beer`
+-- Indexes for table `order_beer`
 --
 ALTER TABLE `order_beer`
   ADD PRIMARY KEY (`order_id`,`beer_id`),
   ADD KEY `order_beer_beer_id_foreign` (`beer_id`);
 
 --
--- Indexen voor tabel `password_resets`
+-- Indexes for table `password_resets`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
--- Indexen voor tabel `personal_access_tokens`
+-- Indexes for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   ADD PRIMARY KEY (`id`),
@@ -1254,99 +1139,111 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
--- Indexen voor tabel `users`
+-- Indexes for table `rating`
 --
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `users_email_unique` (`email`);
+ALTER TABLE `rating`
+  ADD PRIMARY KEY (`id`);
 
 --
--- Indexen voor tabel `user_beer`
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `user_beer`
 --
 ALTER TABLE `user_beer`
   ADD PRIMARY KEY (`user_id`,`beer_id`);
 
 --
--- Indexen voor tabel `visitors`
+-- Indexes for table `visitors`
 --
 ALTER TABLE `visitors`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT voor geëxporteerde tabellen
+-- Indexes for table `votes`
+--
+ALTER TABLE `votes`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_beerId` (`beer_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT voor een tabel `beers`
+-- AUTO_INCREMENT for table `beers`
 --
 ALTER TABLE `beers`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=751;
 
 --
--- AUTO_INCREMENT voor een tabel `customers`
---
-ALTER TABLE `customers`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
-
---
--- AUTO_INCREMENT voor een tabel `employees`
+-- AUTO_INCREMENT for table `employees`
 --
 ALTER TABLE `employees`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
--- AUTO_INCREMENT voor een tabel `failed_jobs`
+-- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT voor een tabel `migrations`
---
-ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
-
---
--- AUTO_INCREMENT voor een tabel `orders`
+-- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT voor een tabel `personal_access_tokens`
+-- AUTO_INCREMENT for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT voor een tabel `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT voor een tabel `visitors`
+-- AUTO_INCREMENT for table `visitors`
 --
 ALTER TABLE `visitors`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- Beperkingen voor geëxporteerde tabellen
+-- AUTO_INCREMENT for table `votes`
+--
+ALTER TABLE `votes`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- Constraints for dumped tables
 --
 
 --
--- Beperkingen voor tabel `orders`
+-- Constraints for table `orders`
 --
 ALTER TABLE `orders`
   ADD CONSTRAINT `orders_customer_id_foreign` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`),
   ADD CONSTRAINT `orders_employee_id_foreign` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Beperkingen voor tabel `order_beer`
+-- Constraints for table `order_beer`
 --
 ALTER TABLE `order_beer`
   ADD CONSTRAINT `order_beer_beer_id_foreign` FOREIGN KEY (`beer_id`) REFERENCES `beers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `order_beer_order_id_foreign` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `votes`
+--
+ALTER TABLE `votes`
+  ADD CONSTRAINT `fk_beerId` FOREIGN KEY (`beer_id`) REFERENCES `beers` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
